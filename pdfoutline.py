@@ -166,7 +166,9 @@ def printProgressBar (iteration, total, prefix = '', suffix = '', decimals = 1, 
         print()
 
 
-if __name__ == '__main__':
+from gooey import Gooey
+@Gooey
+def main():
     parser = argparse.ArgumentParser(prog="pdfoutline.py", description='add table of contents to a pdf')
 
     parser.add_argument('in_pdf', metavar = 'in.pdf', help = 'the input pdf file')
@@ -183,3 +185,7 @@ if __name__ == '__main__':
         pdfoutline(args.in_pdf, args.in_toc, args.out_pdf, args.gs_path)
     else:
         pdfoutline(args.in_pdf, args.in_toc, args.out_pdf)
+
+
+if __name__ == '__main__':
+    main()
